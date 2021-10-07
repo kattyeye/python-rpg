@@ -16,7 +16,8 @@ def castle_start():
     else:
         game_over("You got Shrekd")
 
+
 def inside_castle():
-    
+
     print("\nYou sneak your way inside the castle from above")
     print("\nYou spot two giant doors,")
