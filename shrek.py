@@ -10,3 +10,8 @@ p1 = Player('shrek')
 
 p1.printname()
 
+class Room():
+    def __init__(npcs,enemies)
+        self.npcs = npcs
+        self.enemies = enemies
+
