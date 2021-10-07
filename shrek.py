@@ -1,3 +1,4 @@
+
 class Player:
     """ This is a class that represents the main character in a game. """
 
@@ -13,71 +14,6 @@ p1 = Player('Shrek')
 p1.printname()
 
 
-def start():
-    print("\nYou are standing in a dark room.")
-    print("There is a door to your left and right, which one do you take? (l or r)")
-
-    answer = input(">").lower()
-
-    if "l" in answer:
-        forest_room()
-    elif "r" in answer:
-        swamp_room()
-    else:
-        game_over("Don't you know how to type something properly?")
-
-
-# start the game
-
-
-def forest_room():
-    """
-    function that takes player into forest
-    meets Fiona
-    returns prompt to eithr go to the next room or you lose the game
-    """
-    print("\nLook! Over there!")
-    print("It's a beautiful princess.")
-    print("Her name is Fiona.")
-    print("Do you want to say hello?(1) Or throw mud at her?(2)")
-    print("Type (1) or (2).")
-    answer = input("> ")
-
-    if answer == "1":
-        print(
-            "\nYou fell in love with Fiona, you must go with her to the castle to meet her parents.")
-        castle_start()
-    elif answer == "2":
-        game_over("Fiona says, 'Byeeeee' and marries Lord Farquaad")
-    else:
-        game_over("Better luck next time. Type a number.")
-
-
-def swamp_room():
-
-    print('welcome to the swamp')
-    print('This swamp is filled with mysterious characters')
-    print()
-    answer = input('    l or r    --')
-    if answer == 'l':
-        print('Pinocchio')
-        print()
-        input('o or p')
-        if answer == 'o':
-            print()
-        elif answer == 'p':
-            print()
-        else:
-            print('Donkey says: "Shrek! That isn\'t an option"')
-    elif answer == 'r':
-        print('Fairies')
-        print()
-        input('g or h')
-        if answer == 'g':
-            print()
-        elif answer == 'h':
-
-
 class Game:
 
     def start():
@@ -89,9 +25,9 @@ class Game:
         if answer == "l":
             Forest.forest_room()
         elif answer == "r":
-            swamp_room()
+            Swamp.swamp_room()
         else:
-            game_over("Type l or r next time.")
+            Game.game_over("Type l or r next time.")
 
     def play_again():
         print("\nDo you want to play again? (y or n)")
@@ -101,7 +37,7 @@ class Game:
 
         if "y" in answer:
             # if player typed "yes" or "y" start the game from the beginning
-            start()
+            Game.start()
         else:
             # if user types anything besides "yes" or "y", exit() the program
             exit()
@@ -109,9 +45,8 @@ class Game:
     def game_over(reason):
         print("\n" + reason)
         print("Game Over!")
-        play_again()
+        Game.play_again()
 
-    start()
     # start the game
 
 
@@ -131,40 +66,74 @@ class Forest:
 
         if answer == "1":
             print(
-                "\nYou fell in love with Fiona, you must go with her to the castle to meet her parents.")
-            castle_start()
+                "Fiona asks you a very important question, what's your favorite color? ")
+            print(
+                "If your answer doesn't meet her requirements, you're done. Hint: Nature...")
+            answer = input("> ")
+            if answer == "blue" or "green" or "black":
+                print(
+                    "\nYou fell in love with Fiona, you must go with her to the castle to meet her parents.")
+                Castle.castle_start()
+            else:
+                print(
+                    "Nahhhh. Fiona says, 'Byeeeee' and marries your nemesis, Lord Farquaad")
         elif answer == "2":
-            game_over("Fiona says, 'Byeeeee' and marries Lord Farquaad")
+            Game.game_over("Fiona says, 'Byeeeee' and marries Lord Farquaad")
         else:
-            game_over("Better luck next time. Type a number.")
+            Game.game_over("Better luck next time. Type a number.")
 
 
 class Swamp:
+    questions = {
+        "Why can't a nose be twelve inches long?": ["it would be a foot", "then it would be a foot", "foot"],
+    }
+    question1 = {
+        "What is broken when it's not held?": ["A Promise", "Promise", "promises", "your word"]
+    }
+
+    def riddle2():
+        question2 = {
+            "I can run, but not walk. Thought is not far behind me. What am I?": ["Nose", "a nose"]
+        }
+        for question, correct_answers in question2.items():
+            user_answer = input(f"{question}: ")
+            if any(user_answer.lower() == answer.lower() for answer in correct_answers):
+                print("Correct!")
+            else:
+                print('Donkey says: "Shrek! That isn\'t an option"')
+
+    def riddle1():
+        question1 = {
+            "What can't you see, but it's always in front of you?": ["Future", "the future", "your future", "time ahead", "future time"]
+        }
+        for question1, correct_answers in question1.items():
+            user_answer = input(f"{question1}: ")
+            if any(user_answer.lower() == answer.lower() for answer in correct_answers):
+                print("Correct!")
+            else:
+                print('Donkey says: "Shrek! That isn\'t an option"')
+
     def swamp_room():
+
         print('welcome to the swamp')
         print('This swamp is filled with mysterious characters')
+        print()
+        answer = input('    l or r    --')
+        if answer == 'l':
 
-        input('l or r: ')
-        if input == 'l':
             print('Pinocchio')
-            print()
-            input('o or p')
-            if input == 'o':
-                print()
-            elif input == 'p':
-                print()
-            else:
-                print('Donkey says: "Shrek! That isn\'t an option"')
-        elif input == 'r':
-            print('Fairies')
-            print()
-            input('g or h')
-            if input == 'g':
-                print()
-            elif input == 'h':
-                print()
-            else:
-                print('Donkey says: "Shrek! That isn\'t an option"')
+            for question, correct_answers in Swamp.questions.items():
+                user_answer = input(f"{question}: ")
+                if any(user_answer.lower() == answer.lower() for answer in correct_answers):
+                    print("Correct!")
+                    Swamp.riddle2()
+                else:
+                    print('Donkey says: "Shrek! That isn\'t an option"')
+        elif answer == 'r':
+            print(
+                'Fairy Godmother appears, flapping her wings as she floats higher into the sky.')
+            print('She asks you a riddle, answer to go on.')
+            Swamp.riddle1()
         else:
             print('Donkey says: "Shrek! That isn\'t an option"')
 
@@ -181,12 +150,12 @@ class Castle:
         answer = input(">")
 
         if answer == "1":
-            game_over("Lord Farquad captured you.  Feels bad man.")
+            Game.game_over("Lord Farquad captured you.  Feels bad man.")
         elif answer == "2":
-            inside_castle()
+            Castle.inside_castle()
             print("You climb the vines and make your way up the castle.")
         else:
-            game_over("You got Shrekd")
+            Game.game_over("You got Shrekd")
 
     def inside_castle():
 
@@ -198,7 +167,7 @@ class Castle:
         answer = input(">")
 
         if answer == "1":
-            game_over("Filler text for now...")
+            Game.game_over("Filler text for now...")
         elif answer == "2":
             print("You encounter a mighty dragon!")
             print("How are you going to deal with this dragon?!")
@@ -209,10 +178,23 @@ class Castle:
             answer = input(">")
 
             if answer == "1":
-                game_over("Filler text for now...")
+                Game.game_over("Filler text for now...")
             elif answer == "2":
                 print("You grab Donkey and hurl him at the dragon!")
             else:
                 print("You begin charging at the dragon at speeds unknown...")
-                print("\nYou body-slam the dragon into the wall causing a massive explosion!!!")
-                print("\nAs the rubble settles, you notice a secret froom exposed from the explosion")
+                print(
+                    "\nYou body-slam the dragon into the wall causing a massive explosion!!!")
+                print(
+                    "\nAs the rubble settles, you notice a secret froom exposed from the explosion")
+                Castle.castle_secret_chamber()
+
+    def castle_secret_chamber():
+        """
+        Final endpoint for the game
+        You find the deed to the castle after a riddle
+        You evict farquad and donkey falls in love with the dragon?
+        """
+
+
+Game.start()
