@@ -1,4 +1,4 @@
-def castle_start()
+def castle_start():
 
     print("\nYou slowly approach the bridge to Lord Farquads castle...")
     print("\nYou notice 2 points of entry into the castle.")
@@ -16,7 +16,7 @@ def castle_start()
     else:
         game_over("You got Shrekd")
 
-def inside_castle()
+def inside_castle():
     
     print("\nYou sneak your way inside the castle from above")
     print("\nYou spot two giant doors,")

@@ -28,7 +28,7 @@ def start():
 
 
 # start the game
-start()
+
 
 
 def forest_room():
@@ -56,27 +56,28 @@ def forest_room():
 
 
 def swamp_room():
+    
     print('welcome to the swamp')
     print('This swamp is filled with mysterious characters')
     print()
-    print(input('l or r'))
-    if input == 'l':
+    answer = input('    l or r    --')
+    if answer == 'l':
         print('Pinocchio')
         print()
         input('o or p')
-        if input == 'o':
+        if answer == 'o':
             print()
-        elif input == 'p':
+        elif answer == 'p':
             print()
         else:
             print('Donkey says: "Shrek! That isn\'t an option"')
-    elif input == 'r':
+    elif answer == 'r':
         print('Fairies')
         print()
         input('g or h')
-        if input == 'g':
+        if answer == 'g':
             print()
-        elif input == 'h':
+        elif answer == 'h':
             print()
         else:
             print('Donkey says: "Shrek! That isn\'t an option"')
@@ -102,3 +103,4 @@ def game_over(reason):
     print("\n" + reason)
     print("Game Over!")
     play_again()
+start()
