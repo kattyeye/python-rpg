@@ -191,4 +191,28 @@ class Castle:
     def inside_castle():
 
         print("\nYou sneak your way inside the castle from above")
-        print("\nYou spot two giant doors,")
+        print("\nYou spot two giant doors, only one leads to your destination...")
+        print("1). Enter the door on the left.")
+        print("2). Enter the door on the right.")
+
+        answer = input(">")
+
+        if answer == "1":
+            game_over("Filler text for now...")
+        elif answer == "2":
+            print("You encounter a mighty dragon!")
+            print("How are you going to deal with this dragon?!")
+            print("1). Give up and call it quits.")
+            print("2). Throw Donkey at the dragon as a 'sacrifice'.")
+            print("3). Charge the dragon head-on for 1 on 1 Combat!")
+
+            answer = input(">")
+
+            if answer == "1":
+                game_over("Filler text for now...")
+            elif answer == "2":
+                print("You grab Donkey and hurl him at the dragon!")
+            else:
+                print("You begin charging at the dragon at speeds unknown...")
+                print("\nYou body-slam the dragon into the wall causing a massive explosion!!!")
+                print("\nAs the rubble settles, you notice a secret froom exposed from the explosion")
