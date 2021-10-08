@@ -105,78 +105,86 @@ class Forest:
 class Swamp:
     count = 0
     questions = {
-        "Why can't a nose be twelve inches long?": ["it would be a foot", "then it would be a foot", "foot"],
-    }
-    question1 = {
-        "What is broken when it's not held?": ["A Promise", "Promise", "promises", "your word"]
-    }
+        "I can run, but not walk. Thought is not far behind me. What am I?" :["Nose", "a nose"]
+            }
 
+    question1 ={
+    "What is broken when it's not held?": ["A Promise", "Promise","promises","your word"]
+}
     def riddle2():
-        question2 = {
-            "I can run, but not walk. Thought is not far behind me. What am I?": ["Nose", "a nose"]
-        }
+        question2 =  {"What can't you see, but it's always in front of you?" :["Future", "the future", "your future", "time ahead", "future time"]
+            }
         for question, correct_answers in question2.items():
-            user_answer = input(f"{question}: ")
-            if any(user_answer.lower() == answer.lower() for answer in correct_answers):
-                print("Correct!")
-            elif(Swamp.count < 2):
-                print('Donkey says: "Shrek! That isn\'t an option"')
-                Swamp.count += 1
-                Swamp.riddle2()
-            else:
-                Game.game_over('You stink, Ogre')
-
+                user_answer = typingInput(f"{question}: ")
+                if any(user_answer.lower() == answer.lower() for answer in correct_answers):
+                    typingInput("You have solved an easy riddle Ogre, You must solve one more. // Press any button to continue.")
+                    Swamp.riddle3()
+                elif(Swamp.count < 2):
+                    print('Donkey says: "Have to be better Shrek!"')
+                    Swamp.count += 1
+                    Swamp.riddle2()
+                else:
+                    Game.game_over('You stink, Ogre')
     def riddle1():
-        question1 = {
-            "What can't you see, but it's always in front of you?": ["Future", "the future", "your future", "time ahead", "future time"]
-        }
+        question1 ={
+    "Why can't a nose be twelve inches long?" \
+        : ["it would be a foot", "then it would be a foot", "foot"],
+    }
+        
         for question1, correct_answers in question1.items():
-            user_answer = input(f"{question1}: ")
-            if any(user_answer.lower() == answer.lower() for answer in correct_answers):
-                typingInput(
-                    "You have solved my riddles Ogre, you may continue on your journey to the castle. // Press any button to continue.")
-            elif(Swamp.count < 2):
-                print('Donkey says: "Shrek! That isn\'t an option"')
-                Swamp.count += 1
-                Swamp.riddle1()
-            else:
-                Game.game_over('You stink, Ogre')
+                user_answer = input(f"{question1}: ")
+                if any(user_answer.lower() == answer.lower() for answer in correct_answers):
+                    typingInput("You have solved riddles, Ogre. You may continue continue. // Press any button to continue.")
+                    Swamp.fairies()
+                elif(Swamp.count < 2):
+                    print('Donkey says: "Close but no cigar"')
+                    Swamp.count +=1
+                    Swamp.riddle1()
+                else:
+                    Game.game_over('You stink, Ogre')
 
     def riddle3():
         question3 = {
             "What can be measured but has not height, width or depth": ["Temperature", " the temperature"]
         }
         for question3, correct_answers in question3.items():
-            user_answer = input(f"{question3}: ")
-            if any(user_answer.lower() == answer.lower() for answer in correct_answers):
-                typingInput(
-                    "You have solved my riddles Ogre, you may continue on your journey to the castle. // Press any button to continue.")
-            elif(Swamp.count < 2):
-                print('Donkey says: "Shrek! That isn\'t an option"')
-                Swamp.riddle3()
-                Swamp.count += 1
-            else:
-                Game.game_over('You suck')
+                user_answer = input(f"{question3}: ")
+                if any(user_answer.lower() == answer.lower() for answer in correct_answers):
+                    typingPrint("Well done Ogre, you have what it takes to continue to the castle")
+                    input('Press enter to coninue on your journey')
+                    Castle.castle_start()
+                elif(Swamp.count < 2):
+                    print('Donkey says: "Shrek! That isn\'t an option"')
+                    Swamp.riddle3()
+                    Swamp.count += 1
+                else:
+                    Game.game_over('You suck')
 
     def riddle():
         for question, correct_answers in Swamp.questions.items():
-            user_answer = typingInput(f"{question}: ")
-            if any(user_answer.lower() == answer.lower() for answer in correct_answers):
-                print()
-                Swamp.riddle2()
-                typingInput(
-                    "You have solved my riddles Ogre, you may continue on your journey to the castle. // Press any button to continue.")
-            elif(Swamp.count < 2):
-                print('Donkey says: "Shrek! That isn\'t an option"')
-                Swamp.count += 1
-                print(Swamp.count)
-                Swamp.riddle()
-            else:
-                Game.game_over('You stink, Ogre')
+                user_answer = typingInput(f"{question}: ")
+                if any(user_answer.lower() == answer.lower() for answer in correct_answers):
+                    typingPrint('You think you are so smart... here\'s another one, Ogre')
+                    print()
+                    input('Press enter to continue')
+                    print()
+                    print('Riddle #2:')
+                    Swamp.riddle1()
+                    typingInput("You have solved my riddles Ogre, you may continue on your journey to the castle. // Press any button to continue.")
+                elif(Swamp.count < 2):
+                    print('Donkey says: "Shrek! You have to do better"')
+                    Swamp.count += 1
+                    print(Swamp.count)
+                    Swamp.riddle()
+                else:
+                    Game.game_over('You do not have what it takes, Ogre')
+                
+
 
     def swamp_room():
-        typingPrint('welcome to the swamp')
-        typingPrint('n\This swamp is filled with mysterious characters')
+        typingPrint('welcome to the swamp, Ogre')
+        print()
+        typingPrint( 'This swamp is filled with mysterious characters')
         print()
         typingInput('Press any button to continue')
 
@@ -218,45 +226,47 @@ class Swamp:
                     W            MMMMMM
                                 WWW """)
         print('Pinocchio appears')
-        typingPrint('Ogre, you must solve my ridlles to move on')
+        typingPrint('Ogre, you must solve my ridlles to move on...')
+        print()
         input('press any button to continue')
-
+        print()
+        
+    
         while Swamp.count < 3:
             Swamp.riddle()
+            
+            Game.game_over("you are not smart enough to reach the castle, Ogre")
 
-            Game.game_over(
-                "you are not smart enough to reach the castle, Ogre")
+    def fairies():
+        print('Fairies')
+        typingPrint('Hello Ogre...')
+        print( """        ,_  .--.
+                    , ,   _)\/    ;--.
+            . ' .    \_\-'   |  .'    \
+            -= * =-   (.-,   /  /       |
+            ' .\     ).  ))/ .'   _/\ /
+                \_   \_  /( /     \ /(
+                /_\ .--'   `-.    //  \
+                ||\/        , '._//    |
+                ||/ /`(_ (_,;`-._/     /
+                \_.'   )   /`\       .'
+                    .' .  |  ;.   /`
+                    /      |\(  `.(
+                    |   |/  | `    `
+                    |   |  /
+                    |   |.'
+                __/'  /
+            _ .'  _.-`
+        _.` `.-;`/
+        /_.-'` / /
+            | /
+        jgs   ( /
+            /_/ 
+            """)
+        print()
+        Swamp.riddle2()   
 
-    #     elif answer == 'r':
-    #         print( """ ,_  .--.
-    #              , ,   _)\/    ;--.
-    #      . ' .    \_\-'   |  .'    \
-    #     -= * =-   (.-,   /  /       |
-    #      ' .\     ).  ))/ .'   _/\ /
-    #          \_   \_  /( /     \ /(
-    #          /_\ .--'   `-.    //  \
-    #          ||\/        , '._//    |
-    #          ||/ /`(_ (_,;`-._/     /
-    #          \_.'   )   /`\       .'
-    #               .' .  |  ;.   /`
-    #              /      |\(  `.(
-    #             |   |/  | `    `
-    #             |   |  /
-    #             |   |.'
-    #          __/'  /
-    #      _ .'  _.-`
-    #   _.` `.-;`/
-    #  /_.-'` / /
-    #        | /
-    # jgs   ( /
-    #      /_/
-    #      """)
-
-    #         print('Fairies')
-    #         print()
-    #         riddle1()
-    #     else:
-    #         print('Donkey says: "Shrek! That isn\'t an option"')
+        print('Donkey says: "Shrek! That isn\'t an option"')
 
 
 class Castle:
