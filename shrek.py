@@ -81,13 +81,13 @@ class Forest:
 
         if answer == "1":
             print(
-                "Fiona asks you a very important question, what's your favorite color? ")
+                "Fiona asks you a very important question, 'What's my favorite color?' ")
             print(
-                "If your answer doesn't meet her requirements, you're done. Hint: Nature...")
+                "She says if you're incorrect, you are not her true love. Hint: Shrek...")
             answer = input("> ")
-            if answer == "blue" or "green" or "black":
+            if answer == "green" or "brown":
                 print(
-                    "\nYou fell in love with Fiona, you must go with her to the castle to meet her parents.")
+                    "\n'That's right!' she exclaims. Now that Fiona is sure of her love, you must go with her to the castle to meet her parents.")
                 Castle.castle_start()
             else:
                 print(
