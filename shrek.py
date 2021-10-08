@@ -1,6 +1,6 @@
 import time
 import sys
-
+import random
 
 def typingPrint(text):
     for character in text:
@@ -103,6 +103,17 @@ class Forest:
 
 
 class Swamp:
+
+    riddles ={
+        "What is seen in the middle of March and April that can’t be seen at the beginning or end of either month?" : ["R", "the letter r", "letter r"],
+        "I have cities, but no houses. I have mountains, but no trees. I have water, but no fish. What am I?" : ["a map", "map"],
+        "You measure my life in hours and I serve you by expiring. I’m quick when I’m thin and slow when I’m fat. The wind is my enemy." : ["a candle", "candle"],
+        "You see a boat filled with people. It has not sunk, but when you look again you don’t see a single person on the boat. Why?" : ["they are all married", "everyone is married", "they're all married"]
+    }
+
+    riddle_list = list(riddles)
+    random_entry = random.choice(riddle_list)
+    print("riddle:", random_entry)
     count = 0
     questions = {
         "I can run, but not walk. Thought is not far behind me. What am I?" :["Nose", "a nose"]
@@ -260,7 +271,7 @@ class Swamp:
         _.` `.-;`/
         /_.-'` / /
             | /
-        jgs   ( /
+            ( /
             /_/ 
             """)
         print()
