@@ -272,7 +272,7 @@ class Swamp:
                     W            MMMMMM
                                 WWW """)
         print('Pinocchio appears')
-        typingPrint("'Ogre, you must solve my ridlles to move on...'")
+        typingPrint("'Ogre, you must solve my riddles to move on...'")
         print("\nHis nose is normal size, you can tell he's not lying.")
         input('press any button to continue')
         print()
@@ -282,38 +282,6 @@ class Swamp:
 
             Game.game_over(
                 "you are not smart enough to reach the castle, Ogre")
-
-    def fairies():
-        print('Fairies')
-        typingPrint('Hello Ogre...')
-        print("""        ,_  .--.
-                    , ,   _)\/    ;--.
-            . ' .    \_\-'   |  .'    \
-            -= * =-   (.-,   /  /       |
-            ' .\     ).  ))/ .'   _/\ /
-                \_   \_  /( /     \ /(
-                /_\ .--'   `-.    //  \
-                ||\/        , '._//    |
-                ||/ /`(_ (_,;`-._/     /
-                \_.'   )   /`\       .'
-                    .' .  |  ;.   /`
-                    /      |\(  `.(
-                    |   |/  | `    `
-                    |   |  /
-                    |   |.'
-                __/'  /
-            _ .'  _.-`
-        _.` `.-;`/
-        /_.-'` / /
-            | /
-            ( /
-            /_/
-            """)
-        print()
-        Swamp.riddle2()
-
-        Game.game_over(
-            "you are not smart enough to reach the castle, Ogre")
 
     def fairies():
         print('Fairies appear all around you and ask you to solve a riddle or two.')
