@@ -1,6 +1,8 @@
 import time
 import sys
+from random import randint
 
+dice_roll = randint(1, 6)
 
 def typingPrint(text):
     for character in text:
@@ -265,10 +267,10 @@ class Castle:
         print("\nYou slowly approach the bridge to Lord Farquads castle...")
         print("\nYou notice 2 points of entry into the castle.")
         print("\nWhich path do you choose?")
-        print("1). Enter through the front gates.")
-        print("2). Climb the vines on the side of the castle.")
+        typingPrint("\n1). Enter through the front gates.")
+        typingPrint("\n2). Climb the vines on the side of the castle.")
 
-        answer = input(">")
+        answer = input(" >")
 
         if answer == "1":
             Game.game_over("Lord Farquad captured you.  Feels bad man.")
@@ -285,10 +287,10 @@ class Castle:
         print("1). Enter the door on the left.")
         print("2). Enter the door on the right.")
 
-        answer = input(">")
+        answer = input("> ")
 
         if answer == "1":
-            Game.game_over("Filler text for now...")
+            Game.game_over("I guess you were not right this time.")
         elif answer == "2":
             print("You encounter a mighty dragon!")
             print("How are you going to deal with this dragon?!")
@@ -296,26 +298,82 @@ class Castle:
             print("2). Throw Donkey at the dragon as a 'sacrifice'.")
             print("3). Charge the dragon head-on for 1 on 1 Combat!")
 
-            answer = input(">")
+            answer = input("> ")
 
             if answer == "1":
-                Game.game_over("Filler text for now...")
+                Game.game_over("This adventure is too much for you.")
             elif answer == "2":
                 print("You grab Donkey and hurl him at the dragon!")
+                Game.game_over("What do you get when you throw a donkey at a dragon?  You get a castle :D")
             else:
                 print("You begin charging at the dragon at speeds unknown...")
-                print(
-                    "\nYou body-slam the dragon into the wall causing a massive explosion!!!")
-                print(
-                    "\nAs the rubble settles, you notice a secret froom exposed from the explosion")
-                Castle.castle_secret_chamber()
+                print("\nYou body-slam the dragon into the wall causing a massive explosion!!!")
+                print("\nAs the rubble settles, you notice a secret froom exposed from the explosion")
+                Castle.secret_chamber()
 
-    def castle_secret_chamber():
+    def secret_chamber():
         """
         Final endpoint for the game
         You find the deed to the castle after a riddle
         You evict farquad and donkey falls in love with the dragon?
         """
 
+        print("The chamber seems completely empty, until you spot a lone die on the floor...")
+        print("\nAs you pick up the dice you hear a voice whisper...")
+        print("\nYou've come this far, the castle is yours...")
+        print("\nif you can roll a 6, the entire kingdom will be yours")
+        print("\nBut if you roll anything else, your soul is mine!")
+        print("\nDo you dare risk it all?")
+        print("\n1). Let's risk it all!")
+        print("\n2). I'm not greedy.  I'm an ogre.")
+        
+        answer = input("> ")
+
+        if answer == "1":
+            print(dice_roll)
+            if dice_roll == 1:
+                print("[-------]")
+                print("[       ]")
+                print("[   O   ]")
+                print("[       ]")
+                print("[-------]")
+                Game.game_over("WHY WOULD YOU RISK IT AND LOSE IT ALL AT THE END?!")
+            if dice_roll == 2:
+                print("[-------]")
+                print("[ 0     ]")
+                print("[       ]")
+                print("[     0 ]")
+                print("[-------]")
+                Game.game_over("WHY WOULD YOU RISK IT AND LOSE IT ALL AT THE END?!")
+            if dice_roll == 3:
+                print("[-------]")
+                print("[ O     ]")
+                print("[   O   ]")
+                print("[     O ]")
+                print("[-------]")
+                Game.game_over("WHY WOULD YOU RISK IT AND LOSE IT ALL AT THE END?!")
+            if dice_roll == 4:
+                print("[-------]")
+                print("[ O   O ]")
+                print("[       ]")
+                print("[ O   O ]")
+                print("[-------]")
+                Game.game_over("WHY WOULD YOU RISK IT AND LOSE IT ALL AT THE END?!")
+            if dice_roll == 5:
+                print("[-------]")
+                print("[ O   O ]")
+                print("[   O   ]")
+                print("[ O   O ]")
+                print("[-------]")
+                Game.game_over("WHY WOULD YOU RISK IT AND LOSE IT ALL AT THE END?!")
+            if dice_roll == 6:
+                print("[-------]")
+                print("[ O   O ]")
+                print("[ O   O ]")
+                print("[ O   O ]")
+                print("[-------]")
+                Game.game_over("HOLY FARQUAD!  WE WON THE KINGDOM!")
+        elif answer == "2":
+            Game.game_over("YOU WIN A CASTLE!")     
 
 Game.start()
