@@ -167,9 +167,16 @@ class Swamp:
         "You see a boat filled with people. It has not sunk, but when you look again you don’t see a single person on the boat. Why?": ["they are all married", "everyone is married", "they're all married"]
     }
 
-    riddle_list = list(riddles)
+    riddle_list = list(riddles.items())
     random_entry = random.choice(riddle_list)
+
+    # def listToDict(random_entry):
+    #     random_riddle = {random_entry[i]: random_entry[i + 1] for i in range(0, len(random_entry), 2)}
+    #     return random_riddle
+
+    # random_riddle = random_entry.fromkeys()
     print("riddle:", random_entry)
+    # print('riddles',listToDict(random_entry))
     count = 0
     questions = {
         "I can run, but not walk. Thought is not far behind me. What am I?": ["Nose", "a nose"]
@@ -215,7 +222,7 @@ class Swamp:
 
     def riddle3():
         question3 = {
-            "What can be measured but has not height, width or depth": ["Temperature", " the temperature"]
+            "What can be measured but has no height, width or depth": ["Temperature", " the temperature"]
         }
         for question3, correct_answers in question3.items():
             user_answer = input(f"{question3}: ")
