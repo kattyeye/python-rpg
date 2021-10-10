@@ -92,6 +92,26 @@ class Forest:
             if color_answer == "green" or color_answer == "brown":
                 print(
                     "\n'That's right!' she exclaims. Now that Fiona is sure of her love, you must go with her to the castle to meet her parents.")
+                print("""
+                                                             (\/)
+                                              \/
+
+                                        (,);
+                                       ((  ^_.  ...
+                                        ' / /_\(()))
+                                          L( '}{' ())
+                                          ) (   )_ (()
+                                        (_   \ (   (_)
+                                        | (__'__\_) |
+                                         \___|_(}==/ \
+                                         |    |  |    |
+                                         |_/\_|  |    |
+                                          |  |   |    |
+                                           ) )\  |    |
+                                         _/| |/  |    \
+                                        ( ,\ |_  '~~~~/7
+                                         \_(___)  _/Y
+                 """)
                 Castle.castle_start()
             elif color_answer == "orange" or color_answer == "blue":
                 print("Not quite, try one more time...")
