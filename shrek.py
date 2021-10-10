@@ -1,8 +1,10 @@
 import time
 import sys
 import random
+from random import randint
 
 dice_roll = randint(1, 6)
+
 
 def typingPrint(text):
     for character in text:
@@ -38,9 +40,10 @@ p1.printname()
 class Game:
 
     def start():
-        print("\nYou are standing in a large, open field.")
-        print("There is a pathway into the woods to your left(l). To your right, there is a path to the swamp(r). (l or r)")
-
+        typingPrint("\nYou are standing in a large, open field.")
+        typingPrint(
+            "\nThere is a pathway into the woods to your left(l). To your right, there is a path to the swamp(r). \nWhich do you choose?")
+        print(" (l) or (r) ?")
         answer = input(">").lower()
 
         if answer == "l":
@@ -76,12 +79,12 @@ class Forest:
         """
         function that takes player into forest
         meets Fiona
-        returns prompt to eithr go to the next room or you lose the game
+        returns prompt to either go to the next room or you lose the game
         """
-        print("\nLook! Over there!")
-        print("It's a beautiful princess.")
-        print("Her name is Fiona.")
-        print("Do you want to say hello?(1) Or throw mud at her?(2)")
+        typingPrint("\nLook! Over there!")
+        typingPrint("\nIt's a beautiful princess.")
+        typingPrint("\nHer name is Fiona.")
+        print("\nDo you want to say hello?(1) Or throw mud at her?(2)")
         answer = input(">> ")
         if answer == "1":
             print(
@@ -118,14 +121,14 @@ class Forest:
                 color_answer = input(">> ")
                 if color_answer == "green":
                     print(
-                        "\n'That's right!' she exclaims. Now that Fiona is sure of her love, you must go with her to the castle to meet her parents.")
-                    print("""
-
-                    """)
+                        "\n'That's right!' she exclaims. \nNow that Fiona is (almost) sure of her love, you must go with her to the castle to defeat the mighty dragon.")
+                    print(
+                        "Once you defeat the dragon, Lord Farquaad's castle shall be yours.")
                     Castle.castle_start()
                 else:
-                    print(
+                    typingPrint(
                         "Nahhhh. Fiona says, 'Byeeeee' and marries your nemesis, Lord Farquaad")
+                    typingPrint("\n That hurts.")
                     Game.game_over("Too bad. Better luck next time!")
             else:
                 typingPrint(
@@ -148,7 +151,9 @@ class Forest:
                         ⠄⠄⠄⡈⢿⣷⣿⣿⢿⣿⣿⣷⡦⢤⡀⠄⠄⠄⠄⠄⠄⢐⣠⡿⠁⠄⠄⠄⠄⠄
                                                         """)
         elif answer == "2":
-            Game.game_over("Fiona says, 'Byeeeee' and marries Lord Farquaad")
+            typingPrint(
+                "Fiona says, 'Byeeeee',")
+            Game.game_over("She marries your nemesis, Lord Farquaad (yikes).")
         else:
             Game.game_over("Better luck next time. Type a number.")
 
@@ -380,11 +385,14 @@ class Castle:
                 Game.game_over("This adventure is too much for you.")
             elif answer == "2":
                 print("You grab Donkey and hurl him at the dragon!")
-                Game.game_over("What do you get when you throw a donkey at a dragon?  You get a castle :D")
+                Game.game_over(
+                    "What do you get when you throw a donkey at a dragon?  You get a castle :D")
             else:
                 print("You begin charging at the dragon at speeds unknown...")
-                print("\nYou body-slam the dragon into the wall causing a massive explosion!!!")
-                print("\nAs the rubble settles, you notice a secret froom exposed from the explosion")
+                print(
+                    "\nYou body-slam the dragon into the wall causing a massive explosion!!!")
+                print(
+                    "\nAs the rubble settles, you notice a secret froom exposed from the explosion")
                 Castle.secret_chamber()
 
     def secret_chamber():
@@ -394,7 +402,8 @@ class Castle:
         You evict farquad and donkey falls in love with the dragon?
         """
 
-        print("The chamber seems completely empty, until you spot a lone die on the floor...")
+        print(
+            "The chamber seems completely empty, until you spot a lone die on the floor...")
         print("\nAs you pick up the dice you hear a voice whisper...")
         print("\nYou've come this far, the castle is yours...")
         print("\nif you can roll a 6, the entire kingdom will be yours")
@@ -402,7 +411,7 @@ class Castle:
         print("\nDo you dare risk it all?")
         print("\n1). Let's risk it all!")
         print("\n2). I'm not greedy.  I'm an ogre.")
-        
+
         answer = input("> ")
 
         if answer == "1":
@@ -413,35 +422,40 @@ class Castle:
                 print("[   O   ]")
                 print("[       ]")
                 print("[-------]")
-                Game.game_over("WHY WOULD YOU RISK IT AND LOSE IT ALL AT THE END?!")
+                Game.game_over(
+                    "WHY WOULD YOU RISK IT AND LOSE IT ALL AT THE END?!")
             if dice_roll == 2:
                 print("[-------]")
                 print("[ 0     ]")
                 print("[       ]")
                 print("[     0 ]")
                 print("[-------]")
-                Game.game_over("WHY WOULD YOU RISK IT AND LOSE IT ALL AT THE END?!")
+                Game.game_over(
+                    "WHY WOULD YOU RISK IT AND LOSE IT ALL AT THE END?!")
             if dice_roll == 3:
                 print("[-------]")
                 print("[ O     ]")
                 print("[   O   ]")
                 print("[     O ]")
                 print("[-------]")
-                Game.game_over("WHY WOULD YOU RISK IT AND LOSE IT ALL AT THE END?!")
+                Game.game_over(
+                    "WHY WOULD YOU RISK IT AND LOSE IT ALL AT THE END?!")
             if dice_roll == 4:
                 print("[-------]")
                 print("[ O   O ]")
                 print("[       ]")
                 print("[ O   O ]")
                 print("[-------]")
-                Game.game_over("WHY WOULD YOU RISK IT AND LOSE IT ALL AT THE END?!")
+                Game.game_over(
+                    "WHY WOULD YOU RISK IT AND LOSE IT ALL AT THE END?!")
             if dice_roll == 5:
                 print("[-------]")
                 print("[ O   O ]")
                 print("[   O   ]")
                 print("[ O   O ]")
                 print("[-------]")
-                Game.game_over("WHY WOULD YOU RISK IT AND LOSE IT ALL AT THE END?!")
+                Game.game_over(
+                    "WHY WOULD YOU RISK IT AND LOSE IT ALL AT THE END?!")
             if dice_roll == 6:
                 print("[-------]")
                 print("[ O   O ]")
@@ -450,6 +464,7 @@ class Castle:
                 print("[-------]")
                 Game.game_over("HOLY FARQUAD!  WE WON THE KINGDOM!")
         elif answer == "2":
-            Game.game_over("YOU WIN A CASTLE!")     
+            Game.game_over("YOU WIN A CASTLE!")
+
 
 Game.start()
