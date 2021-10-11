@@ -397,10 +397,10 @@ class Castle:
                 Game.game_over(
                     "What do you get when you throw a donkey at a dragon?  You get a castle :D")
             else:
-                print("You begin charging at the dragon at speeds unknown...")
-                print(
+                typingPrint("You begin charging at the dragon at speeds unknown...")
+                typingPrint(
                     "\nYou body-slam the dragon into the wall causing a massive explosion!!!")
-                print(
+                typingPrint(
                     "\nAs the rubble settles, you notice a secret froom exposed from the explosion")
                 Castle.secret_chamber()
 
@@ -411,15 +411,15 @@ class Castle:
         You evict farquad and donkey falls in love with the dragon?
         """
 
-        print(
+        typingPrint(
             "The chamber seems completely empty, until you spot a lone die on the floor...")
-        print("\nAs you pick up the dice you hear a voice whisper...")
-        print("\nYou've come this far, the castle is yours...")
-        print("\nif you can roll a 6, the entire kingdom will be yours")
-        print("\nBut if you roll anything else, your soul is mine!")
-        print("\nDo you dare risk it all?")
-        print("\n1). Let's risk it all!")
-        print("\n2). I'm not greedy.  I'm an ogre.")
+        typingPrint("\nAs you pick up the dice you hear a voice whisper...")
+        typingPrint("\nYou've come this far, the castle is yours...")
+        typingPrint("\nif you can roll a 6, the entire kingdom will be yours")
+        typingPrint("\nBut if you roll anything else, your soul is mine!")
+        typingPrint("\nDo you dare risk it all?")
+        typingPrint("\n1). Let's risk it all!")
+        typingPrint("\n2). I'm not greedy.  I'm an ogre.")
 
         answer = input("> ")
 
