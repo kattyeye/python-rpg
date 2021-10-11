@@ -193,7 +193,8 @@ class Swamp:
             user_answer = typingInput(f"{question}: ")
             if any(user_answer.lower() == answer.lower() for answer in correct_answers):
                 typingInput(
-                    "You have solved an easy riddle Ogre, You must solve one more. // Press any button to continue.")
+                    "You have solved an easy riddle Ogre, You must solve one more.")
+                print('Press any button to continue.')
                 Swamp.riddle3()
             elif(Swamp.count < 2):
                 print('Donkey says: "Have to do better Shrek!"')
@@ -204,8 +205,9 @@ class Swamp:
 
     def riddle1():
         question1 = {
-            "Why can't a nose be twelve inches long?": ["it would be a foot", "then it would be a foot", "foot"],
+            "Why can't a nose be twelve inches long?": ["it would be a foot", "then it would be a foot", "foot",  "because then it would be a foot","because it would be a foot"],
         }
+
 
         for question1, correct_answers in question1.items():
             user_answer = input(f"{question1}: ")
@@ -265,7 +267,7 @@ class Swamp:
         print('\nWe must test your ogreness.')
         typingPrint('This swamp is filled with mysterious characters.')
         print()
-        typingInput('Press any button to continue')
+        typingInput('Press enter to continue')
 
         print("""
                             WWWWWWWWWWWWWW
@@ -307,7 +309,7 @@ class Swamp:
         print('Pinocchio appears')
         typingPrint("'Ogre, you must solve my riddles to move on...'")
         print("\nHis nose is normal size, you can tell he's not lying.")
-        input('press any button to continue')
+        input('press enter to continue')
         print()
 
         while Swamp.count < 3:
