@@ -175,7 +175,7 @@ class Swamp:
     #     return random_riddle
 
     # random_riddle = random_entry.fromkeys()
-    print("riddle:", random_entry)
+    # print("riddle:", random_entry)
     # print('riddles',listToDict(random_entry))
     count = 0
     questions = {
