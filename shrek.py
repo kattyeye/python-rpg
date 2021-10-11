@@ -194,7 +194,7 @@ class Swamp:
             if any(user_answer.lower() == answer.lower() for answer in correct_answers):
                 typingInput(
                     "You have solved an easy riddle Ogre, You must solve one more.")
-                print('Press any button to continue.')
+                print('Press enter to continue.')
                 Swamp.riddle3()
             elif(Swamp.count < 2):
                 print('Donkey says: "Have to do better Shrek!"')
@@ -213,7 +213,8 @@ class Swamp:
             user_answer = input(f"{question1}: ")
             if any(user_answer.lower() == answer.lower() for answer in correct_answers):
                 typingInput(
-                    "You have solved the riddles, Ogre. You may continue onto the path towards the kingdom of Lord Farquaad. // Press any button to continue.")
+                    "You have solved the riddles, Ogre. You may continue onto the path towards the kingdom of Lord Farquaad.")
+                input('Press enter to continue.')
                 Swamp.fairies()
             elif(Swamp.count < 2):
                 print('Donkey says: "Close but no cigar"')
@@ -252,8 +253,9 @@ class Swamp:
                 print()
                 print('Riddle #2:')
                 Swamp.riddle1()
-                typingInput(
-                    "You have solved my riddles Ogre, you may continue on your journey to the castle. // Press any button to continue.")
+                typingPrint(
+                    "You have solved my riddles Ogre, you may continue on your journey to the castle.")
+                input(' Press any button to continue.')
             elif(Swamp.count < 2):
                 print('Donkey says: "I was hoping this would be a happy ending."')
                 Swamp.count += 1
